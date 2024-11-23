@@ -1,21 +1,113 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Arial', sans-serif;
+  background-color: #fff5f5; /* Subtle red background */
+  color: #4c0000; /* Dark red for text */
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+/* Wrapper */
+div.container {
+  padding: 20px;
+  max-width: 600px;
+  margin-top: 180px;
+  margin-left: 389px;
+  background-color: #ffebeb; /* Light red container background */
+  border: 1px solid #ffcccc; /* Light red border */
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Header */
+h1 {
+  font-size: 1.8rem;
+  color: #a30000; /* Darker red for header */
+  margin-bottom: 20px;
+  text-align: left; /* Aligned to the top-left */
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+/* Input Field */
+input {
+  width: calc(100% - 120px); /* Space for the button next to it */
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ff9999; /* Light red border */
+  border-radius: 4px;
+  margin-bottom: 10px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+input:focus {
+  border-color: #cc0000; /* Highlighted darker red */
+}
+
+/* Button */
+button {
+  background-color: #cc0000; /* Bold red */
+  color: #fff;
+  padding: 10px 15px;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:disabled {
+  background-color: #b93030; /* Muted red for disabled */
+  cursor: not-allowed;
+}
+
+button:hover:not(:disabled) {
+  background-color: #990000; /* Darker red on hover */
+}
+
+/* Error and Loading Messages */
+p {
+  margin-top: 10px;
+}
+
+p.error {
+  color: #d40000; /* Vibrant red for errors */
+}
+
+p.loading {
+  color: #cc0000; /* Darker red for loading */
+}
+
+/* Chat Container Styling */
+div.chat-container {
+  margin-top: 20px;
+}
+
+div.chat-container h2 {
+  color: #a30000; /* Dark red for subheadings */
+}
+
+div.chat-container p {
+  color: #4c0000; /* Dark text inside chat container */
+}
+
+/* Add Responsiveness */
+@media (max-width: 600px) {
+  input {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  button {
+    width: 100%;
+  }
 }
